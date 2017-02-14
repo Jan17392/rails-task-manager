@@ -1,0 +1,14 @@
+<h1>Tasks#index</h1>
+<p>Find me in app/views/tasks/index.html.erb</p>
+
+<%= link_to "Create a new task", new_task_path %>
+
+<% @task.each do |todo| %>
+<h2><%= todo.title %></h2>
+<p><%= todo.description %></p>
+<p><%= todo.status %></p>
+<p><%= todo.created_at %></p>
+<%= link_to "View this task", task_path(todo) %>
+<%= link_to "Edit this task", edit_task_path(todo) %>
+<%= button_to "Delete", task_path(todo), method: :delete %>
+<% end %>
